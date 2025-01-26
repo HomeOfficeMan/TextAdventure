@@ -26,13 +26,15 @@ public class GameManger
         GameOver
     }
 
-    // private Player player;
+    private Player player;
     // private CreatureManager creatureManger;
     // private StringManager stringManager;
 
     public void RunGame()
     {
+        InitilizeNewGame();
         Console.WriteLine("Game Started!");
+        
     }
 
     public void ChangeState(GameState newState)
@@ -59,13 +61,35 @@ public class GameManger
         }
     }
 
-    void InitilizeNewGame()
+    void DisplayMainMenu()
     {
         throw new NotImplementedException();
+    }
+
+    void InitilizeNewGame()
+    {
+        player = CreateNewPlayerCharacter();
     }
 
     void LoadGame()
     {
         throw new NotImplementedException();
+    }
+
+    Player CreateNewPlayerCharacter()
+    {
+        string playerName = "";
+        Console.WriteLine("How is your hero called?");
+        
+        do
+        {
+            playerName = Console.ReadLine();
+            if(string.IsNullOrEmpty(playerName))
+                {
+                    Console.WriteLine("Your Character needs a name.");
+                }
+        } while(string.IsNullOrEmpty(playerName));
+
+        return new Player(playerName, 100);
     }    
 }
