@@ -12,6 +12,6 @@ public class Player : Character
     {
         // damage -= Armor.value;
         base.TakeDamage(damage);
-        Console.WriteLine("Player-specific behavior: Maybe trigger a shield or UI update!");
+        Console.WriteLine($"You take {damage} damage! {Health} HP left.");
     }
 }
