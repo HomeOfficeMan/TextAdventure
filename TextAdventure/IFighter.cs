@@ -1,7 +1,7 @@
 public interface IFighter
 {
-    //protected Weapon currentWeapon {get; set; }
-    //protected Armor currentArmor {get; set; }
+    protected Weapon currentWeapon {get; }
+    protected Armor currentArmor {get; }
     
     protected int maxHealth { get; }
     protected int currentHealth { get; }

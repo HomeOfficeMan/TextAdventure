@@ -2,13 +2,16 @@ public class Player : Character, IFighter
 {
     public int maxHealth { get; private set; }
     public int currentHealth { get; private set; }
+ 
+    public Weapon currentWeapon => currentWeapon;
+
+    public Armor currentArmor => currentArmor;
 
     public Player(string name, int health) : base(name, health)
     {
         this.maxHealth = health;
         this.currentHealth = health;
     }
-
    
     public int Attack()
     {
